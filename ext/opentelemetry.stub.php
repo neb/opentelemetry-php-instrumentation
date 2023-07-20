@@ -7,9 +7,9 @@ namespace OpenTelemetry\Instrumentation;
 /**
  * @param string|null $class The (optional) hooked function's class. Null for a global/built-in function.
  * @param string $function The hooked function's name.
- * @param \Closure|null $pre function($class, array $params, string $class, string $function, ?string $filename, ?int $lineno): $params
+ * @param \Closure|null $pre function(string|object|null $obj, array $params, ?string $class, string $function, ?string $filename, ?int $lineno): $params
  *        You may optionally return modified parameters.
- * @param \Closure|null $post function($class, array $params, $returnValue, ?Throwable $exception): $returnValue
+ * @param \Closure|null $post function(string|object|null $obj, array $params, $returnValue, ?Throwable $exception, ?string $class, string $function, ?string $filename, ?int $lineno): $returnValue
  *        You may optionally return modified return value.
  * @return bool Whether the observer was successfully added
  *
